@@ -1,5 +1,5 @@
-from turtle import title
-from flask import Flask,render_template
+
+from flask import Flask,render_template, url_for
 
 # creating application instance
 app = Flask(__name__)
@@ -14,7 +14,7 @@ posts = [
     },
     {
         'author':'Jane Kameme',
-        'title':'Her journer to somewhere',
+        'title':'Her journer to the past',
         'comment':'It was cool',
         'date_posted':'June 20 2022'
     },
