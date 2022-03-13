@@ -1,0 +1,34 @@
+<h1>A GREAT ODYSSEY</h1>
+<h2>Food</h2>
+My name is {{ first_name | capitalize }} and My fav meal is {{ favourite_food }} # use filter
+<h2>Bucketlist</h2>
+
+{% for list in bucketlist %}
+<!-- using if statements -->
+
+{% if list == 75 %}
+   {{ list + 10 }}
+{% else %}
+   {{ list | title }}
+{% endif%}
+{% endfor %} <br>
+
+<!-- getting the indexeth item -->
+
+{{ bucketlist.0}} <br>
+{{ bucketlist.2}} <br>
+
+{{ bucketlist.3 * 10}} <br>
+
+{% for post in posts %}
+
+    <p>By: {{ post.author }}</p>
+    <p> {{ post.title }} posted on {{ post.date_posted }} </p>
+    <p>{{ post.content }}</p>
+ 
+
+{% endfor %}
+
+
+
+ 
