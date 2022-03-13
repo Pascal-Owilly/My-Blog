@@ -1,8 +1,11 @@
 
 from flask import Flask,render_template, url_for
+from forms import RegistrationForm, LoginForm
 
 # creating application instance
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = 'd89bd8891e344e4b50facbe3f9ec092b'
 
 # dummy database call
 posts = [
@@ -29,9 +32,19 @@ def index():
 @app.route('/about')
 def about():
 
-    title = 'About'
-    return render_template('about.html', title = title)    
- 
+  
+    return render_template('about.html', title = 'About')    
+
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title = 'Register',form=form)    
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title = 'login',form=form)    
 
 if __name__=='__main__':
     app.run(debug=True)     
