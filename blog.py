@@ -5,46 +5,45 @@ from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-# setting database location
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-# create database instance
-
 db = SQLAlchemy(app)
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    password = db.Column(db.String(50), nullable=False)
-    # creating one to many relationship
-    posts = db.relationship('Post', backref='author', lazy='True')
+    password = db.Column(db.String(60), nullable=False)
+    posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
-        return f"User({self.username}','{self.email}','{self.image_file}')"
+        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.text, nullable=False)
+    content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
     def __repr__(self):
-        return f"Post({self.title}','{self.date_posted}')"
+        return f"Post('{self.title}', '{self.date_posted}')"
 
 
 posts = [
     {
-        'author': 'Corey Schafer',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018'
+        'author': 'Barak Obama',
+        'title': 'Economy',
+        'content': 'We fight to remove the daily chronicles of economic inconsistency',
+        'date_posted': 'May 1, 2022'
     },
     {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
+        'author': 'Cool James',
+        'title': 'Blockchain',
+        'content': 'Early in 2000s no on knew how hard the .com era will hit the world be cause they were in the middle of it',
+        'date_posted': 'May 7, 2022'
     }
 ]
 
