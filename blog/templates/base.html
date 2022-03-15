@@ -7,17 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <script src="blog/static/script.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
         <title>Flask Blog - {{ title }}</title>
     {% else %}
-        <title>Flask Blog</title>
+        <title>My Blog</title>
     {% endif %}
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" style=" background-image: url('blog/static/pictures/e63bfdc51ea7268ef625add8e9409532.jpg');">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="/">MY BLOG</a>
@@ -33,7 +33,7 @@
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">My Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
@@ -46,7 +46,7 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-5">
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
               {% for category, message in messages %}
@@ -58,18 +58,15 @@
           {% endwith %}
           {% block content %}{% endblock %}
         </div>
-        <div class="col-md-4">
+        
+        <div class="col-md-7">
           <div class="content-section">
-            <h3>Topics of Interest</h3>
-            <p class='text-muted'>Gravitating toward greatness
+            <h3>Fav</h3>
+            <p class='text-muted'>
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Politics</li>
-                <li class="list-group-item list-group-item-light">Lifestyle</li>
-                <li class="list-group-item list-group-item-light">Computer Science</li>
-                <li class="list-group-item list-group-item-light">Economic Overview</li>
-                <li class="list-group-item list-group-item-light">Life of a warrior</li>
-                <li class="list-group-item list-group-item-light">Hope of the World</li>
+                <h4>Oliver Wendel</h4>
+                <blockquote style="text-shadow: 1px 2px grey;">It is the providence of knowledge to speak and the privilege of wisdom to listen</blockquote>
+
               </ul>
             </p>
           </div>

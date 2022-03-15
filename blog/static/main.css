@@ -1,5 +1,5 @@
 body {
-    background: #fafafa;
+    background-color: #111;
     color: #333333;
     margin-top: 5rem;
   }
@@ -9,7 +9,11 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #2f8e92;
+  }
+
+  header {
+    background-image: url('blog/static/pictures/e63bfdc51ea7268ef625add8e9409532.jpg');
   }
   
   .site-header .navbar-nav .nav-link {

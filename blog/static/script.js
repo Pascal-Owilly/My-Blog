@@ -1,0 +1,1 @@
+alert('click on a post to update or delete')
