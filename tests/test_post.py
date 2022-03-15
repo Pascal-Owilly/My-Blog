@@ -1,6 +1,6 @@
 
 import unittest
-from  import Post, User
+from blog.models import Post, User
 
 class PitchTest(unittest.TestCase):
     def setUp(self):
