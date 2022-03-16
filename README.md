@@ -28,9 +28,8 @@ These are the behaviours/features that the application implements for use by a u
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| users loads the application | *On page load* | user sees various posts/blogs posted by bloggers |
-| user clicks on comment button | *On  click* | comment page is loaded and user sees various comments and can add more comments |
-| user clicks on subscribe button | *on click* | subscription page is loaded and user enters details for subscription |
+| user loads the application | *On page load* | users see various posts/blogs posted by bloggers |
+| user clicks on register button | *on click* | subscription page is loaded and user enters details for subscription |
 | writer cllicks on sign up | *On page load* | sign up page is loaded and user can sign up to be a blogger |
 | writer clicks on crete blog  | *on page load* | user is able to create blog on when the page loads |
 | writes clicks on edit post| *edit page is loaded* | user is able to update the blog|
@@ -39,7 +38,7 @@ These are the behaviours/features that the application implements for use by a u
 | writer clicks on profile | *on page load* | the writer add profile adds profile infoemation and uploads a profile photo|
 
 ## Prerequisites
-* Python3.8
+* Python3.6 and above
 
 ## Setup/Installation Requirements
 `git clone  https://github.com/pascal-owilly/Blog-Post.git`. 
@@ -47,8 +46,8 @@ These are the behaviours/features that the application implements for use by a u
 * After cloning, use command cd Blog-Post.git and open using your code editor. 
 * Create a vitual environment using the following command `python3 -m venv --without-pip virtual`
 * Activate the virtual environment using the following command ` . virtual/bin/activate`
-* Run this command  to interact with the application `$python3.8 manage.py server`
-* Run tests units using the this command `$python3.8 manage.py test`
+* Run this command  to interact with the application `$python3.9 app.py server`
+* Run tests units using the this command `$`python --version` (example `python3.9 app.py`) 
 
 ## Known Bugs
 
@@ -57,7 +56,13 @@ No known bugs
 ## Technologies Used
 - Python3.9
 - Flask
-- Heroku
+- Heroku CLI
+- git CLI
+- Markdown
+- HTML
+- CSS
+- Bootstrap
+- GitHub
 
 ## Contacts
 Email: pascalouma54@gmail.com.com
